@@ -11,6 +11,6 @@ def numeros(num):
     return 0
 
 
-a = "-91.922"
+a = "+ε"
 
 print(numeros(a))
