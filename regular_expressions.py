@@ -2,20 +2,17 @@ import re
 
 from dataclasses import dataclass
 
+teste = r"^(HM|MH)([hm]*mm+|[hm]*h|[hm]*hhm)"
 
 @dataclass
 class ValidPatterns:
-    """casais heterossexuais com pelo menos duas filhas mulheres
-    ou um filho homem, ou ainda pelo menos dois filhos homens
-    e uma filha mulher
-    """
-    first = r"[HM][[h|m]*mm+]|h|[h|m]*[hhm]"
-    second = r"[HM][h*m(mm)*]"
-    third = r"[HM]m[m|h]*h$"
-    fourth = r"(M{2}|H{2})[hm][h|m][hm]"
-    fifth = r"(M{2}|H{2})((hm)+|(mh)+)"
-    sixth = r"(M{2}|H{2})m*h(m+h)*|m+(h(m+h)*)*"
-    seventh = r""
+    letter_a = r"^(HM|MH)([hm]*m[hm]*m+[hm]*|[hm]*h+[hm]*|[hm+][hm+][hm+][hm]*)$"
+    letter_b = r"^(HM|MH)(h*mh*(mh*m)*h*)$"
+    letter_c = r"^(HM|MH)m[hm]*h$"
+    letter_d = r"^(M{2}|H{2})(hm|mh)(hm|mh|hh|mm)[hm]*(hm|mh)$"
+    letter_e = r"^(M{2}|H{2})(hm+(hm)*|mh+(mh)*)$"
+    letter_f = r"^(M{2}|H{2})([hm]|(m+h|m)+|(hm+)+|(m+h|hm+h)|(m+|hm+h))$"
+    letter_g = r"^[HM][HM]([hm]|[hm][hm]|[hm]*mmm)$"
 
 
 class Family:
