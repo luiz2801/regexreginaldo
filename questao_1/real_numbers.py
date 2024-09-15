@@ -1,7 +1,7 @@
 import re
 
 
-pattern = r'^([+\-]?[0-9]+(\.[0-9]+)?|ε)$'
+pattern = r'^([+\-]?[0-9]+(\.[0-9]+)?)$'
 compiled_pattern = re.compile(pattern)
 
 
