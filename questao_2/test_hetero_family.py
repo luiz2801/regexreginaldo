@@ -1,4 +1,4 @@
-from regular_expressions import ValidPatterns
+from families_and_patterns import ValidPatterns
 from fixtures import run_perfect_batch, run_error_batch
 
 

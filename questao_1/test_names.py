@@ -1,4 +1,5 @@
-from names import validate_names
+from names import Name
+from validate_patterns import validate_pattern
 
 
 def test_name_success():
@@ -7,7 +8,7 @@ def test_name_success():
              "Luiz Gabriel",
              "Joao Antonio Barbosa"]
     for name in batch:
-        assert validate_names(name) == True
+        assert validate_pattern(Name.pattern, name) == True
 
 
 def test_name_failure():
@@ -16,4 +17,4 @@ def test_name_failure():
              "Savio luiz miranda",
              "Reginaldo"]
     for name in batch:
-        assert validate_names(name) == False
+        assert validate_pattern(Name.pattern, name) == False

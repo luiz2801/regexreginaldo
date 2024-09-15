@@ -1,12 +1,6 @@
-import re
+from dataclasses import dataclass
 
 
-pattern = r'^([+\-]?[0-9]+(\.[0-9]+)?)$'
-compiled_pattern = re.compile(pattern)
-
-
-def validate_real_numbers(real_number: str) -> bool:
-    if compiled_pattern.match(real_number) and (real_number != "-0"):
-        return True
-    
-    return False
+@dataclass
+class RealNumber:
+    pattern = r'^([+\-]?[0-9]+(\.[0-9]+)?)$'

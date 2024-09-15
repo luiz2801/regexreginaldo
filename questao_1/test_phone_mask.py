@@ -1,4 +1,5 @@
-from phone_number import validate_cellphone
+from phone_number import PhoneNumber
+from validate_patterns import validate_pattern
 
 
 def test_cellphone_success():
@@ -7,7 +8,7 @@ def test_cellphone_success():
              "91 981692643"]
     
     for number in batch:
-        assert validate_cellphone(number) == True
+        assert validate_pattern(PhoneNumber.pattern, number) == True
 
 
 def test_cellphone_failure():
@@ -16,4 +17,4 @@ def test_cellphone_failure():
              "91981692643"]
     
     for number in batch:
-        assert validate_cellphone(number) == False
+        assert validate_pattern(PhoneNumber.pattern, number) == False

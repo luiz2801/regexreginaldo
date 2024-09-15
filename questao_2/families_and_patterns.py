@@ -2,7 +2,6 @@ import re
 
 from dataclasses import dataclass
 
-teste = r"^(HM|MH)([hm]*mm+|[hm]*h|[hm]*hhm)"
 
 @dataclass
 class ValidPatterns:

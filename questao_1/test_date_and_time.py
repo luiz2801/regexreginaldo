@@ -1,4 +1,5 @@
-from date_and_time import validate_date_and_time
+from date_and_time import DateAndTime
+from validate_patterns import validate_pattern
 
 
 def test_date_and_time_success():
@@ -8,7 +9,7 @@ def test_date_and_time_success():
              "12/10/0020 23:57:33"]
     
     for date_and_time in batch:
-        assert validate_date_and_time(date_and_time) == True
+        assert validate_pattern(DateAndTime.pattern, date_and_time) == True
 
 
 def test_date_and_time_failure():
@@ -18,4 +19,4 @@ def test_date_and_time_failure():
              "12/10/002023:57:33"]
     
     for date_and_time in batch:
-        assert validate_date_and_time(date_and_time) == False
+        assert validate_pattern(DateAndTime.pattern, date_and_time) == False

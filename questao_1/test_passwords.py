@@ -1,4 +1,5 @@
-from passwords import validate_password
+from passwords import Password
+from validate_patterns import validate_pattern
 
 
 def test_password_success():
@@ -8,7 +9,7 @@ def test_password_success():
              "7m8NO9P10MH"]
     
     for password in batch:
-        assert validate_password(password) == True
+        assert validate_pattern(Password.pattern, password) == True
 
 
 def test_password_failure():
@@ -18,4 +19,4 @@ def test_password_failure():
              "12345678910"]
     
     for password in batch:
-        assert validate_password(password) == False
+        assert validate_pattern(Password.pattern, password) == False

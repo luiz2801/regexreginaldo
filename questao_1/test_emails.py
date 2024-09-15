@@ -1,4 +1,5 @@
-from emails import validate_email
+from emails import Email
+from validate_patterns import validate_pattern
 
 
 def test_email_success():
@@ -8,7 +9,7 @@ def test_email_success():
              "reginaldo@dossantos.com.br"]
     
     for email in batch:
-        assert validate_email(email) == True
+        assert validate_pattern(Email.pattern, email) == True
 
 
 def test_email_failure():
@@ -20,4 +21,4 @@ def test_email_failure():
              "reginaldo_123@.com.br"]
     
     for email in batch:
-        assert validate_email(email) == False
+        assert validate_pattern(Email.pattern, email) == False
