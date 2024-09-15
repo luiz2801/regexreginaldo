@@ -10,6 +10,6 @@ def telefone(numero):
 
 
 
-b = "(91)98169-2953"
+b = "(91)981692643"
 
 print(telefone(b))
