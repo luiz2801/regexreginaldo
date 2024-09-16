@@ -1,4 +1,5 @@
-from cpf import validate_cpf
+from cpf import CPF
+from validate_patterns import validate_pattern
 
 
 def test_cpf_success():
@@ -8,7 +9,7 @@ def test_cpf_success():
              "109.876.543-21"]
     
     for cpf in batch:
-        assert validate_cpf(cpf) == True
+        assert validate_pattern(CPF.pattern, cpf) == True
 
 
 def test_cpf_failure():
@@ -19,4 +20,4 @@ def test_cpf_failure():
              "1091.2876.5431-34"]
     
     for cpf in batch:
-        assert validate_cpf(cpf) == False
+        assert validate_pattern(CPF.pattern, cpf) == False

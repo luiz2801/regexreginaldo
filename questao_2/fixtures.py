@@ -1,6 +1,6 @@
 import pytest
 
-from regular_expressions import Family
+from families_and_patterns import Family
 
 
 dummy_family = Family()
